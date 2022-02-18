@@ -1,5 +1,7 @@
 FROM node:16
 
+LABEL maintainer="RodrigoTomeES"
+
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -8,9 +10,9 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install && npm run tsc
+RUN npm install
 
 # Bundle app source
 COPY . .
 
-CMD [ "node", "./dist/index.mjs" ]
+CMD [ "npm", "start" ]
