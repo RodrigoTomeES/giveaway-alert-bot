@@ -7,11 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2022-02-18
+
+### Added
+
+- Now you can execute the program with `npm start`.
+- Maintainer label added to Dockerfile.
+
+### Fixed
+
+- Error running Docker image related with Node modules.
+
+### Removed
+
+- Clean up of unnecessary packages `@types/axios` and `@types/node`.
+
 ## [1.0.0] - 2022-02-17
 
 ### Added
 
 - Now you can check Alienware giveaway every 5 minutes.
 - Telegram support. Add your TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in `.env`
-  to notify you of giveaways through Telegram
+  to notify you of giveaways through Telegram.
 - Docker support.
