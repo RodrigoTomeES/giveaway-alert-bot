@@ -5,8 +5,8 @@ import { GiveawayAPI } from './api/index.mjs';
 import { Giveaway } from './model/Giveaway.mjs';
 import { Telegram } from './util/index.mjs';
 
-const eualienware = new GiveawayAPI('https://eu.alienwarearena.com/');
-const naalienware = new GiveawayAPI('https://na.alienwarearena.com/');
+const eualienware = new GiveawayAPI('https://eu.alienwarearena.com');
+const naalienware = new GiveawayAPI('https://na.alienwarearena.com');
 let currentGiveaways: Giveaway[] = [];
 
 const processData = (
@@ -33,6 +33,10 @@ const processData = (
         Telegram.sendMessage(`${baseURL}${newGiveaway.url}`);
       }
     });
+
+    if (!isOld) {
+      currentGiveaways = newGiveaways;
+    }
   }
 };
 
