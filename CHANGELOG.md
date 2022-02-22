@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2022-02-18
+## [1.0.2] - 2022-02-22
+
+### Fixed
+
+- Fixed error in giveaway link.
+- Now the bot only warn you one time when new giveaway is detected.
+
+## [1.0.1] - 2022-02-18
 
 ### Added
 
