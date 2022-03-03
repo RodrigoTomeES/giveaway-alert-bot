@@ -1,1 +1,1 @@
-export { Telegram } from './Telegram.mjs';
+export { processData, sendMessage } from './utils.mjs';
