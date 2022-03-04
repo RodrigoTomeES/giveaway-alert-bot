@@ -9,7 +9,7 @@ export const processData = (
   currentGiveaways: Giveaway[]
 ): void => {
   if (currentGiveaways.length == 0) {
-    currentGiveaways = response.data;
+    currentGiveaways.push(...response.data);
 
     sendMessage(
       'This is the first execution of the bot, so we are fetching data...'
@@ -20,17 +20,18 @@ export const processData = (
 
     newGiveaways.forEach((newGiveaway) => {
       currentGiveaways.forEach((currentGiveaway) => {
-        isOld = isOld || Giveaway.compare(currentGiveaway, newGiveaway);
+        isOld = isOld || currentGiveaway.compare(newGiveaway);
       });
 
       if (!isOld) {
-        console.log(`New giveaway detected: ${baseURL}${newGiveaway.url}`);
-        sendMessage(`${baseURL}${newGiveaway.url}`);
+        console.log(`New giveaway detected: ${newGiveaway.toString(baseURL)}`);
+        sendMessage(newGiveaway.toString(baseURL));
       }
     });
 
     if (!isOld) {
-      currentGiveaways = newGiveaways;
+      currentGiveaways.length = 0;
+      currentGiveaways.push(...newGiveaways);
     }
   }
 };

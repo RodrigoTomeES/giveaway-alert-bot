@@ -1,1 +1,1 @@
-export { GiveawayAPI } from './GiweawayAPI.mjs';
+export { AlienwareArenaAPI } from './AlienwareArenaAPI.mjs';

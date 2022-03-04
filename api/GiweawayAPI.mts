@@ -1,11 +1,16 @@
+import { AxiosRequestConfig, AxiosResponse } from 'axios';
+
 import HttpClient from './HttpClient.mjs';
-import { Giveaway } from '../model/index.mjs';
 
 export class GiveawayAPI extends HttpClient {
   public constructor(url: string) {
     super(url);
   }
 
-  public getGiveaways = () =>
-    this.instance.get<Giveaway[]>('/esi/featured-tile-data/Giveaway');
+  protected getGenericGiveaways<T>(
+    endpoint: string,
+    config?: AxiosRequestConfig<any>
+  ): Promise<AxiosResponse<T, any>> {
+    return this.instance.get<T>(endpoint, config);
+  }
 }

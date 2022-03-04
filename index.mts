@@ -1,12 +1,12 @@
 import { scheduleJob } from 'node-schedule';
 
-import { GiveawayAPI } from './api/index.mjs';
+import { AlienwareArenaAPI } from './api/index.mjs';
 import { Giveaway } from './model/index.mjs';
 import * as Util from './util/index.mjs';
 
-const eualienware = new GiveawayAPI('https://eu.alienwarearena.com');
-const naalienware = new GiveawayAPI('https://na.alienwarearena.com');
-let currentGiveaways: Giveaway[] = [];
+const eualienware = new AlienwareArenaAPI('https://eu.alienwarearena.com');
+const naalienware = new AlienwareArenaAPI('https://na.alienwarearena.com');
+const currentGiveaways: Giveaway[] = [];
 
 Util.sendMessage(
   'If you are seeing this message you have your Alienware Giveaway Bot successfully setup 🤓'
@@ -14,7 +14,7 @@ Util.sendMessage(
 
 scheduleJob('eualienware', '0 0/10 * * * *', () =>
   eualienware
-    .getGiveaways()
+    .getGiveaways('/esi/featured-tile-data/Giveaway')
     .then((response) =>
       Util.processData(response, eualienware.baseURL, currentGiveaways)
     )
@@ -22,7 +22,7 @@ scheduleJob('eualienware', '0 0/10 * * * *', () =>
 
 scheduleJob('naalienware', '0 5/10 * * * *', () =>
   naalienware
-    .getGiveaways()
+    .getGiveaways('/esi/featured-tile-data/Giveaway')
     .then((response) =>
       Util.processData(response, naalienware.baseURL, currentGiveaways)
     )

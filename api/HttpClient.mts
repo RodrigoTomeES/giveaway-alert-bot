@@ -8,7 +8,7 @@ abstract class HttpClient {
   protected readonly instance: AxiosInstance;
   private _baseURL: string;
 
-  public constructor(baseURL: string) {
+  protected constructor(baseURL: string) {
     this.instance = axios.create({
       baseURL,
     });
