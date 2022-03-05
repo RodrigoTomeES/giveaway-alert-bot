@@ -1,8 +1,9 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { Giveaway } from '../model/Giveaway.mjs';
 
 import HttpClient from './HttpClient.mjs';
 
-export class GiveawayAPI extends HttpClient {
+export abstract class GiveawayAPI extends HttpClient {
   public constructor(url: string) {
     super(url);
   }
@@ -13,4 +14,8 @@ export class GiveawayAPI extends HttpClient {
   ): Promise<AxiosResponse<T, any>> {
     return this.instance.get<T>(endpoint, config);
   }
+
+  abstract getGiveaways(
+    endpoint: string
+  ): Promise<AxiosResponse<Giveaway[], any>>;
 }
