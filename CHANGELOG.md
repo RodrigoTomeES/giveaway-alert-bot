@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-03-05
+
+### Added
+
+- Now you can execute the bot with docker-compose.
+- The bot code has been updated so it can crawl multiple websites.
+
+### Changed
+
+- Docker image is based in alpine instead of default node.
+
 ## [1.0.2] - 2022-02-22
 
 ### Fixed
