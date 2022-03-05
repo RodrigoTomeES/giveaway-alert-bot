@@ -1,4 +1,5 @@
 version: '3.9'
 services:
-  giveawaybot:
+  giveaway-alert-bot:
+    container_name: 'giveaway-alert-bot'
     build: .
