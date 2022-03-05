@@ -1,0 +1,10 @@
+[
+  {
+    "website": "eualienware",
+    "cron": "0 0/10 * * * *"
+  },
+  {
+    "website": "naalienware",
+    "cron": "0 5/10 * * * *"
+  }
+]
