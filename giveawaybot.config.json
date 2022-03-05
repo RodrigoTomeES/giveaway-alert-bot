@@ -6,5 +6,9 @@
   {
     "website": "naalienware",
     "cron": "0 5/10 * * * *"
+  },
+  {
+    "website": "freesteamkeys",
+    "cron": "0 0/5 * * * *"
   }
 ]

@@ -41,8 +41,7 @@ export const processData = (
       });
 
       if (!isOld) {
-        console.log(`New giveaway detected: ${newGiveaway.toString(baseURL)}`);
-        sendMessage(newGiveaway.toString(baseURL));
+        sendMessage(`New giveaway detected: ${newGiveaway.toString(baseURL)}`);
       }
     });
 
@@ -53,4 +52,7 @@ export const processData = (
   }
 };
 
-export const sendMessage = (message: string) => Telegram.sendMessage(message);
+export const sendMessage = (message: string) => {
+  console.log(message);
+  Telegram.sendMessage(message);
+};

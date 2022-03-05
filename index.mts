@@ -1,4 +1,4 @@
-import { AlienwareArenaAPI } from './api/index.mjs';
+import { AlienwareArenaAPI, FreeSteamKeysAPI } from './api/index.mjs';
 import { lauchCron, sendMessage } from './util/index.mjs';
 import { TypeConfig, TypeSupportedWebsites } from './types';
 
@@ -6,6 +6,7 @@ import config from './giveawaybot.config.json' assert { type: 'json' };
 
 const eualienware = new AlienwareArenaAPI('https://eu.alienwarearena.com');
 const naalienware = new AlienwareArenaAPI('https://na.alienwarearena.com');
+const freesteamkeys = new FreeSteamKeysAPI('https://www.freesteamkeys.com');
 
 const SUPPORTED_WEBSITES: TypeSupportedWebsites = {
   eualienware: {
@@ -17,6 +18,11 @@ const SUPPORTED_WEBSITES: TypeSupportedWebsites = {
     website: 'naalienware',
     api: naalienware,
     endpoint: '/esi/featured-tile-data/Giveaway',
+  },
+  freesteamkeys: {
+    website: 'freesteamkeys',
+    api: freesteamkeys,
+    endpoint: '/wp-json/wp/v2/posts',
   },
 };
 
@@ -39,6 +45,13 @@ sendMessage(
         x.cron,
         SUPPORTED_WEBSITES.naalienware.api,
         SUPPORTED_WEBSITES.naalienware.endpoint
+      );
+    case SUPPORTED_WEBSITES.freesteamkeys.website:
+      lauchCron(
+        x.website,
+        x.cron,
+        SUPPORTED_WEBSITES.freesteamkeys.api,
+        SUPPORTED_WEBSITES.freesteamkeys.endpoint
       );
   }
 });
