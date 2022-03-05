@@ -6,8 +6,11 @@ with the giveaway URL.
 
 ## Supported websites
 
-- [EU Alienware Arena](https://eu.alienwarearena.com/) - `eualienware`
-- [NA Alienware Arena](https://na.alienwarearena.com/) - `naalienware`
+| Website                                                 | Keyword config file |
+| ------------------------------------------------------- | ------------------- |
+| [eu.alienwarearena.com](https://eu.alienwarearena.com/) | `eualienware`       |
+| [na.alienwarearena.com](https://na.alienwarearena.com/) | `naalienware`       |
+| [freesteamkeys.com](https://www.freesteamkeys.com/)     | `freesteamkeys`     |
 
 ## Configuration
 
