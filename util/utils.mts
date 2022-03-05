@@ -29,7 +29,7 @@ export const processData = (
     currentGiveaways.push(...response.data);
 
     sendMessage(
-      'This is the first execution of the bot, so we are fetching data...'
+      `This is the first execution of the bot for ${baseURL}, so we are fetching data...`
     );
   } else {
     const newGiveaways = response.data;

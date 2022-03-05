@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added support to [freesteamkeys.com](https://www.freesteamkeys.com/).
+- Logs have been added on the server.
 
 ## [2.0.0] - 2022-03-05
 
