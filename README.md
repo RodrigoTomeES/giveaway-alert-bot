@@ -1,10 +1,33 @@
-# Alienware Giveaway Bot
+# Giveaway Alert Bot
 
-With this code you can check if there is a new giveaway in Alienware EU or NA.
-When there is a new giveaway code use Telegram API bot to send you a message
+With this code you can check if there is a new giveaway in multiples websites.
+When there is a new giveaway the code use Telegram API bot to send you a message
 with the giveaway URL.
 
-By default the code check the website every 10 minutes but the query is sandwiched between the two domains so it is actually queried every 5 minutes.
+## Supported websites
+
+- EU Alienware Arena
+- NA Alienware Arena
+
+## Configuration
+
+Use the `giveawaybot.config.json` to add the websites to track and the cron. By
+default all the websites are tracked with 5 minutes of ping.
+
+Example
+
+```json
+[
+  {
+    "website": "eualienware",
+    "cron": "0 0/10 * * * *"
+  },
+  {
+    "website": "naalienware",
+    "cron": "0 5/10 * * * *"
+  }
+]
+```
 
 ## Usage
 
