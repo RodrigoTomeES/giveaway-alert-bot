@@ -8,7 +8,13 @@ By default the code check the website every 10 minutes but the query is sandwich
 
 ## Usage
 
-### Docker
+### Docker with docker-compose
+
+```bash
+docker-compose up -d
+```
+
+### Docker without docker-compose
 
 First you need to build the image
 
