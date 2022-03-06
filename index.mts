@@ -27,7 +27,7 @@ const SUPPORTED_WEBSITES: TypeSupportedWebsites = {
 };
 
 sendMessage(
-  'If you are seeing this message you have your Alienware Giveaway Bot successfully setup 🤓'
+  'If you are seeing this message you have your Giveaway Alert Bot successfully setup 🤓'
 );
 
 (config as TypeConfig[])?.forEach((x: TypeConfig) => {
