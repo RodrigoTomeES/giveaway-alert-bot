@@ -13,13 +13,7 @@ export class FreeSteamKeysAPI extends GiveawayAPI {
       transformResponse: [].concat(
         axios.defaults.transformResponse,
         (data: any) => {
-          const giveaways = [];
-
-          data.forEach((x: any) =>
-            giveaways.push(new FreeSteamKeysGiveaway(x))
-          );
-
-          return { data: giveaways };
+          return { data: data.map((x: any) => new FreeSteamKeysGiveaway(x)) };
         }
       ),
     });

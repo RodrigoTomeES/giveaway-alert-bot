@@ -13,13 +13,9 @@ export class AlienwareArenaAPI extends GiveawayAPI {
       transformResponse: [].concat(
         axios.defaults.transformResponse,
         (data: any) => {
-          const giveaways = [];
-
-          data.data.forEach((x: any) =>
-            giveaways.push(new AlienwareArenaGiveaway(x))
-          );
-
-          return { data: giveaways };
+          return {
+            data: data.data.map((x: any) => new AlienwareArenaGiveaway(x)),
+          };
         }
       ),
     });
