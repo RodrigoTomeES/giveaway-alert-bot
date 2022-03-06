@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.1] - 2022-03-05
+
+### Fixed
+
+- Fixed bug that caused several cron to be launched for the same website.
+
 ## [2.1.0] - 2022-03-05
 
 ### Added

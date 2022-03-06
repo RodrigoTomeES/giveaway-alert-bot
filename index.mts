@@ -39,6 +39,7 @@ sendMessage(
         SUPPORTED_WEBSITES.eualienware.api,
         SUPPORTED_WEBSITES.eualienware.endpoint
       );
+      break;
     case SUPPORTED_WEBSITES.naalienware.website:
       lauchCron(
         x.website,
@@ -46,6 +47,7 @@ sendMessage(
         SUPPORTED_WEBSITES.naalienware.api,
         SUPPORTED_WEBSITES.naalienware.endpoint
       );
+      break;
     case SUPPORTED_WEBSITES.freesteamkeys.website:
       lauchCron(
         x.website,
@@ -53,5 +55,6 @@ sendMessage(
         SUPPORTED_WEBSITES.freesteamkeys.api,
         SUPPORTED_WEBSITES.freesteamkeys.endpoint
       );
+      break;
   }
 });
