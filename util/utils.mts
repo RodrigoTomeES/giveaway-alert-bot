@@ -11,7 +11,7 @@ export const lauchCron = (
   api: GiveawayAPI,
   endpoint: string
 ) => {
-  const currentGiveaways: Giveaway[] = [];
+  const currentGiveaways: Map<number, Giveaway> = new Map();
 
   scheduleJob(name, cron, () =>
     api
@@ -23,31 +23,34 @@ export const lauchCron = (
 export const processData = (
   response: AxiosResponse<Giveaway[], any>,
   baseURL: string,
-  currentGiveaways: Giveaway[]
+  currentGiveaways: Map<number, Giveaway>
 ): void => {
-  if (currentGiveaways.length == 0) {
-    currentGiveaways.push(...response.data);
+  if (currentGiveaways.size === 0) {
+    response.data.forEach((giveaway: Giveaway) =>
+      currentGiveaways.set(giveaway.id, giveaway)
+    );
 
     sendMessage(
       `This is the first execution of the bot for ${baseURL}, so we are fetching data...`
     );
   } else {
     const newGiveaways = response.data;
-    let isOld = false;
+    let isOld = true;
 
-    newGiveaways.forEach((newGiveaway) => {
-      currentGiveaways.forEach((currentGiveaway) => {
-        isOld = isOld || currentGiveaway.compare(newGiveaway);
-      });
+    newGiveaways.forEach((newGiveaway: Giveaway) => {
+      const alreadyExist = currentGiveaways.has(newGiveaway.id);
+      isOld = isOld && alreadyExist;
 
-      if (!isOld) {
+      if (!alreadyExist) {
         sendMessage(`New giveaway detected: ${newGiveaway.toString(baseURL)}`);
       }
     });
 
     if (!isOld) {
-      currentGiveaways.length = 0;
-      currentGiveaways.push(...newGiveaways);
+      currentGiveaways.clear();
+      newGiveaways.forEach((giveaway: Giveaway) =>
+        currentGiveaways.set(giveaway.id, giveaway)
+      );
     }
   }
 };
