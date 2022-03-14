@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.2] - 2022-03-14
+
+### Fixed
+
+- Now the bot only warn you one time when new giveaway is detected.
+
 ## [2.1.1] - 2022-03-06
 
 ### Fixed
@@ -36,7 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed error in giveaway link.
-- Now the bot only warn you one time when new giveaway is detected.
 
 ## [1.0.1] - 2022-02-18
 
