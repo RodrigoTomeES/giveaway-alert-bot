@@ -1,7 +1,12 @@
 export interface Giveaway {
   /**
+   * Return the id of the Giveaway
+   */
+  get id(): number;
+
+  /**
    * Compare giveaways
-   * @param {T} newGiveaway
+   * @param {Giveaway} newGiveaway
    */
   compare(newGiveaway: Giveaway): boolean;
 
