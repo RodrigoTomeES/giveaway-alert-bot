@@ -10,5 +10,9 @@
   {
     "website": "freesteamkeys",
     "cron": "0 0/5 * * * *"
+  },
+  {
+    "website": "steelseries",
+    "cron": "0 0/5 * * * *"
   }
 ]
