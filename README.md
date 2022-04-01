@@ -11,6 +11,7 @@ with the giveaway URL.
 | [eu.alienwarearena.com](https://eu.alienwarearena.com/) | `eualienware`       |
 | [na.alienwarearena.com](https://na.alienwarearena.com/) | `naalienware`       |
 | [freesteamkeys.com](https://www.freesteamkeys.com/)     | `freesteamkeys`     |
+| [games.steelseries.com](https://games.steelseries.com/) | `steelseries`       |
 
 ## Configuration
 
