@@ -17,6 +17,7 @@ export const lauchCron = (
     api
       .getGiveaways(endpoint)
       .then((response) => processData(response, api.baseURL, currentGiveaways))
+      .catch((error) => console.error(error.toJSON()))
   );
 };
 
