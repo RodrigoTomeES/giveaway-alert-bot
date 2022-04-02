@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2022-04-01
+
+### Added
+
+- Added support to [games.steelseries.com](https://games.steelseries.com/home).
+- Added restart unless-stopped to docker compose
+
+### Fixed
+
+- Fixed crash when there is a connection error
+
 ## [2.1.2] - 2022-03-14
 
 ### Fixed
@@ -30,8 +41,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Now you can execute the bot with docker-compose.
 - The bot code has been updated so it can crawl multiple websites.
+- Now you can execute the bot with docker-compose.
 
 ### Changed
 
