@@ -6,6 +6,7 @@ export type TypeSupportedWebsite = {
   website: string;
   api: GiveawayAPI;
   endpoint: string;
+  baseGiveawayURL: string;
 };
 
 export type TypeSupportedWebsites = {

@@ -528,6 +528,6 @@ export class SteelseriesGiveaway implements Giveaway {
    * Show the giveaway
    */
   public toString(baseURL: string): string {
-    throw `https://games.steelseries.com/giveaway/${this.id}`;
+    throw `${baseURL}/${this.id}`;
   }
 }

@@ -12,7 +12,7 @@ export const lauchCron = (cron: string, web: TypeSupportedWebsite) => {
     web.api
       .getGiveaways(web.endpoint)
       .then((response) =>
-        processData(response, web.api.baseURL, currentGiveaways)
+        processData(response, web.baseGiveawayURL, currentGiveaways)
       )
       .catch((error) => console.error(error.toJSON()))
   );
@@ -20,7 +20,7 @@ export const lauchCron = (cron: string, web: TypeSupportedWebsite) => {
 
 export const processData = (
   response: AxiosResponse<Giveaway[], any>,
-  baseURL: string,
+  baseGiveawayURL: string,
   currentGiveaways: Map<number, Giveaway>
 ): void => {
   if (currentGiveaways.size === 0) {
@@ -29,7 +29,7 @@ export const processData = (
     );
 
     sendMessage(
-      `This is the first execution of the bot for ${baseURL}, so we are fetching data...`
+      `This is the first execution of the bot for ${baseGiveawayURL}, so we are fetching data...`
     );
   } else {
     const newGiveaways = response.data;
@@ -40,7 +40,9 @@ export const processData = (
       isOld = isOld && alreadyExist;
 
       if (!alreadyExist) {
-        sendMessage(`New giveaway detected: ${newGiveaway.toString(baseURL)}`);
+        sendMessage(
+          `New giveaway detected: ${newGiveaway.toString(baseGiveawayURL)}`
+        );
       }
     });
 
