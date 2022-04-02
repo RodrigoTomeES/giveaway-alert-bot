@@ -71,14 +71,8 @@ docker run -d alienware-giveaway-bot
 
 ### Node
 
-First you need to compile the code
+Compile the code and run the bot
 
 ```bash
-npm run tsc
-```
-
-Later you can execute it
-
-```bash
-node ./dist/index.mjs
+npm start
 ```
