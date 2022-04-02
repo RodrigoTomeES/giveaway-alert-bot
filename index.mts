@@ -74,5 +74,7 @@ sendMessage(
         SUPPORTED_WEBSITES.steelseries.endpoint
       );
       break;
+    default:
+      sendMessage(`The website ${x.website} is not supported`);
   }
 });
