@@ -10,36 +10,16 @@ sendMessage(
 (config as TypeConfig[])?.forEach((x: TypeConfig) => {
   switch (x.website) {
     case SUPPORTED_WEBSITES.eualienware.website:
-      lauchCron(
-        x.website,
-        x.cron,
-        SUPPORTED_WEBSITES.eualienware.api,
-        SUPPORTED_WEBSITES.eualienware.endpoint
-      );
+      lauchCron(x.cron, SUPPORTED_WEBSITES.eualienware);
       break;
     case SUPPORTED_WEBSITES.naalienware.website:
-      lauchCron(
-        x.website,
-        x.cron,
-        SUPPORTED_WEBSITES.naalienware.api,
-        SUPPORTED_WEBSITES.naalienware.endpoint
-      );
+      lauchCron(x.cron, SUPPORTED_WEBSITES.naalienware);
       break;
     case SUPPORTED_WEBSITES.freesteamkeys.website:
-      lauchCron(
-        x.website,
-        x.cron,
-        SUPPORTED_WEBSITES.freesteamkeys.api,
-        SUPPORTED_WEBSITES.freesteamkeys.endpoint
-      );
+      lauchCron(x.cron, SUPPORTED_WEBSITES.freesteamkeys);
       break;
     case SUPPORTED_WEBSITES.steelseries.website:
-      lauchCron(
-        x.website,
-        x.cron,
-        SUPPORTED_WEBSITES.steelseries.api,
-        SUPPORTED_WEBSITES.steelseries.endpoint
-      );
+      lauchCron(x.cron, SUPPORTED_WEBSITES.steelseries);
       break;
     default:
       sendMessage(`The website ${x.website} is not supported`);

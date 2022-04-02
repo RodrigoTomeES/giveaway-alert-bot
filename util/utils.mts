@@ -3,20 +3,17 @@ import { scheduleJob } from 'node-schedule';
 
 import { Telegram } from './Telegram.mjs';
 import { Giveaway } from '../model/index.mjs';
-import { GiveawayAPI } from '../api/GiweawayAPI.mjs';
+import { TypeSupportedWebsite } from '../types/index.js';
 
-export const lauchCron = (
-  name: string,
-  cron: string,
-  api: GiveawayAPI,
-  endpoint: string
-) => {
+export const lauchCron = (cron: string, web: TypeSupportedWebsite) => {
   const currentGiveaways: Map<number, Giveaway> = new Map();
 
-  scheduleJob(name, cron, () =>
-    api
-      .getGiveaways(endpoint)
-      .then((response) => processData(response, api.baseURL, currentGiveaways))
+  scheduleJob(web.website, cron, () =>
+    web.api
+      .getGiveaways(web.endpoint)
+      .then((response) =>
+        processData(response, web.api.baseURL, currentGiveaways)
+      )
       .catch((error) => console.error(error.toJSON()))
   );
 };

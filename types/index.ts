@@ -1,2 +1,6 @@
-export { TypeConfig, TypeSupportedWebsites } from './config';
+export {
+  TypeConfig,
+  TypeSupportedWebsite,
+  TypeSupportedWebsites,
+} from './config';
 export { Post } from './wordpress';
