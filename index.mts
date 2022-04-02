@@ -1,40 +1,7 @@
-import {
-  AlienwareArenaAPI,
-  FreeSteamKeysAPI,
-  SteelseriesAPI,
-} from './api/index.mjs';
-import { lauchCron, sendMessage } from './util/index.mjs';
-import { TypeConfig, TypeSupportedWebsites } from './types';
+import { lauchCron, sendMessage, SUPPORTED_WEBSITES } from './util/index.mjs';
+import { TypeConfig } from './types';
 
 import config from './giveawaybot.config.json' assert { type: 'json' };
-
-const eualienware = new AlienwareArenaAPI('https://eu.alienwarearena.com');
-const naalienware = new AlienwareArenaAPI('https://na.alienwarearena.com');
-const freesteamkeys = new FreeSteamKeysAPI('https://www.freesteamkeys.com');
-const steelseries = new SteelseriesAPI('https://api.igsp.io');
-
-const SUPPORTED_WEBSITES: TypeSupportedWebsites = {
-  eualienware: {
-    website: 'eualienware',
-    api: eualienware,
-    endpoint: '/esi/featured-tile-data/Giveaway',
-  },
-  naalienware: {
-    website: 'naalienware',
-    api: naalienware,
-    endpoint: '/esi/featured-tile-data/Giveaway',
-  },
-  freesteamkeys: {
-    website: 'freesteamkeys',
-    api: freesteamkeys,
-    endpoint: '/wp-json/wp/v2/posts',
-  },
-  steelseries: {
-    website: 'steelseries',
-    api: steelseries,
-    endpoint: '/promotions',
-  },
-};
 
 sendMessage(
   'If you are seeing this message you have your Giveaway Alert Bot successfully setup 🤓'
