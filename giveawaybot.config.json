@@ -5,7 +5,11 @@
   },
   {
     "website": "naalienware",
-    "cron": "0 5/10 * * * *"
+    "cron": "0 7/10 * * * *"
+  },
+  {
+    "website": "communityalienware",
+    "cron": "0 3/10 * * * *"
   },
   {
     "website": "freesteamkeys",

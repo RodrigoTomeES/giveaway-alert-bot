@@ -23,6 +23,12 @@ export const SUPPORTED_WEBSITES: TypeSupportedWebsites = {
     endpoint: '/esi/featured-tile-data/Giveaway',
     baseGiveawayURL: naalienware.baseURL,
   },
+  communityalienware: {
+    website: 'communityalienware',
+    api: eualienware,
+    endpoint: '/esi/featured-tile-data/CommunityGiveaway',
+    baseGiveawayURL: eualienware.baseURL,
+  },
   freesteamkeys: {
     website: 'freesteamkeys',
     api: freesteamkeys,

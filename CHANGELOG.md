@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.0] - 2024-03-03
+
+### Added
+
+- Added support to [alienware arena community giveaways](https://eu.alienwarearena.com/community-giveaways).
+
 ## [2.2.0] - 2022-04-01
 
 ### Added
