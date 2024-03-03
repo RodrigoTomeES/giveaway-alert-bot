@@ -15,6 +15,9 @@ sendMessage(
     case SUPPORTED_WEBSITES.naalienware.website:
       lauchCron(x.cron, SUPPORTED_WEBSITES.naalienware);
       break;
+    case SUPPORTED_WEBSITES.communityalienware.website:
+      lauchCron(x.cron, SUPPORTED_WEBSITES.communityalienware);
+      break;
     case SUPPORTED_WEBSITES.freesteamkeys.website:
       lauchCron(x.cron, SUPPORTED_WEBSITES.freesteamkeys);
       break;
